@@ -1,3 +1,31 @@
+Lab 3 - cmd>catalina start 
+        go to directory - C:\apache-tomcat-9.0.52\webapps
+            create a folder - demo1
+            and file t1.html in demo1
+                <html>
+                    <h1>Hello </h1>
+                    <h2>H2 tags</h2>
+                <form>
+                  <label for="fname">First name:</label><br>
+                  <input type="text" id="fname" name="fname"><br>
+                  <label for="lname">Last name:</label><br>
+                  <input type="text" id="lname" name="lname">
+                </form>
+
+                <table border="1" bgcolor="cyan">
+                    <tr>
+                        <td>Deptno</td>
+                        <td>DName</td>
+                        <td>Loc</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>HR</td>
+                        <td>Pnq</td>
+                    </tr>
+                </html>
+        go to chrome = http://localhost:8080/demo1/t1.html
+        
 Lab 2 - 
     Eclipse -> same workspace
         Servers  ->new server
