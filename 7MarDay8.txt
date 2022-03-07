@@ -1,0 +1,8 @@
+Lab 1 - c:\tomcat...
+    cmd>cd tomcatfolder
+    cmd>catalina start 
+      if it gives error - JAVA_HOME not set
+        set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_05 (Confirm)
+    cmd>catalina start  (if earlier has given error)
+    Chrome -> http://localhost:8080
+    
