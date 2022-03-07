@@ -1,3 +1,5 @@
+Lab 6 - create t4.html to create a drop down list
+
 Lab 5 - create t3.html
         Name - name of user
         Age - (number data)
