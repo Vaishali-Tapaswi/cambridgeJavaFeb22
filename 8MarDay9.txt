@@ -1,3 +1,21 @@
+Lab2 - Write t1.html
+		<form action="second">
+		  <label for="fname">First name:</label><br>
+		  <input type="text" id="fname" name="fname"><br>
+		  <label for="lname">Last name:</label><br>
+		  <input type="text" id="lname" name="lname"><br><br>
+		  <input type="submit" value="Click to Check" />
+		</form>
+	Write SecondServlet
+		Modify doGet method
+			String fn = request.getParameter("fname");
+			String ln = request.getParameter("lname");
+			PrintWriter out = response.getWriter();
+			out.println("<H1>Welcome !! " + fn + "  " + ln + "</H1>");
+
+	Modify index.html to provide a hlink for t1.html
+		<h1><a href="t1.html">Accept Firstname and Lastname</a></h1>
+
 Lab1 - File -> New -> Dynamic Web Project
 	demo1
 	Target Runtime - Tomcat 9
