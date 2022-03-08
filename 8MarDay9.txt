@@ -1,3 +1,24 @@
+Lab 3 - Write t2.html
+		<form action="third" method="post">
+		  <label for="username">UserName:</label><br>
+		  <input type="text" id="username" name="username"><br>
+		  <label for="password">Password :</label><br>
+		  <input type="password" id="password" name="password"><br><br>
+		  <input type="submit" value="Click to Check" />
+		</form>
+	Write Third Servlet
+		Modify doPost to include
+				System.out.println("doPost invoked");
+				PrintWriter out  = response.getWriter();
+				String username = request.getParameter("username");
+				String password = request.getParameter("password");
+				if (username.equals(password))
+					out.println("Valid Login");
+				else
+					out.println("InValid Login");
+	Modify index.html to have link to t2.html
+		<h1><a href="t2.html">Accept login and password and check if details are valid</a></h1>
+
 Lab2 - Write t1.html
 		<form action="second">
 		  <label for="fname">First name:</label><br>
