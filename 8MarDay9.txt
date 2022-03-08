@@ -1,0 +1,26 @@
+Lab1 - File -> New -> Dynamic Web Project
+	demo1
+	Target Runtime - Tomcat 9
+	select - generate web.xml deployment descriptor(DD)
+
+	Create index.html 
+		right click on webapp -> new html page -> index.html
+		add a line
+			<h1>Demo1 - index.html</h1>
+		rightclick on index.html
+			run as -> run on server
+		check browser 
+
+	create servlet -first
+		right click on java -> new -> servlet
+			java package  - demo
+			class name - First
+		Change @WebServlet annotation 
+			from "/First" to "/first"
+
+		Modify doGet method to have 
+			PrintWriter out = response.getWriter();
+			out.println("<H1>First Servlet invoked </H1>");
+		rightclick on first servlet
+			run as -> run on server
+		check browser 
