@@ -1,3 +1,17 @@
+Lab 4 - create a new servlet (Simple3)
+            Modify doGet method
+                    // invoke a jsp page
+   		//Option 1 -> New Request -> RoundTrip
+   		//	response.sendRedirect("t3.jsp");
+   		// Option 2 ->  Server-server forward -> url doesnot change
+   		//	RequestDispatcher disp = this.getServletContext().getRequestDispatcher("/t3.jsp");
+   		//	disp.forward(request, response);
+
+            Create t3.jsp
+                    <h1>T3.jsp</h1>
+            Run with option1 and then comment option1 and run option2
+                    Observe the difference in option1 and option2 (url)
+                        
 Lab 3 - t2.jsp 
           <%
           out.println(new Date());
