@@ -1,3 +1,19 @@
+Lab 5 - Modify Simple1 doGet method
+            	// TODO Auto-generated method stub
+		int no1 = Integer.parseInt(request.getParameter("no1"));
+		int no2 = Integer.parseInt(request.getParameter("no2"));
+		String op = request.getParameter("submit");
+		int ans = 0;
+		if (op.equalsIgnoreCase("add"))
+				ans  = no1+no2;
+		else
+				ans = no1-no2;
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/output.jsp");
+		request.setAttribute("answer", ans);
+		dispatcher.forward(request, response);
+        Write output.jsp
+            <h1>Output of <%= request.getParameter("submit") %> is 	<%= request.getAttribute("answer") %></h1>
+        Run -> index.html (give input)..    
 Lab 4 - create a new servlet (Simple3)
             Modify doGet method
                     // invoke a jsp page
