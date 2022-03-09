@@ -1,3 +1,7 @@
+Lab 6- Create a new project(demo3)
+	index.html -> accept empno, ename, salary give a show button
+		on click on show -> it should call a jsp(show.jsp)=> show a table with emp details(request.getParameter)
+		
 Lab 5 - Modify Simple1 doGet method
             	// TODO Auto-generated method stub
 		int no1 = Integer.parseInt(request.getParameter("no1"));
