@@ -1,0 +1,18 @@
+Lab 1- Create a new dynamic web page - demo2
+    create index.html
+      	<h1>Index.html of demo2</h1>
+        <form action="simple1">
+          Number 1 : <input type="number" name="no1" /><br /> Number 2 : <input
+            type="number" name="no2" /><br /> <input type="submit" value="Add"
+            name="submit" /> <input type="submit" value="Sub" name="submit" />
+        </form>
+  Write demo.Simple1 servlet
+    -> modify @WebServlet annoation -> simple1
+    Modify doGet method
+      	PrintWriter out = response.getWriter();
+        out.println("<h1>doGet of Simple1 invoked ...</h1>");
+        // get value of no1 
+        // get value of no2
+        // if submit is add then add no1 and no2 and show
+        //						 sub  -------and show
+ Test
