@@ -1,3 +1,15 @@
+Lab 3 - t2.jsp 
+          <%
+          out.println(new Date());
+          %>
+        Create a new servlet (Simple3)-> change @WebServlet annotation to /simple3
+        Modify goGet method
+          	response.sendRedirect("t2.jsp");
+       
+       browser -> http://localhost:8080/demo2/simple3
+       
+       Modify t2.jsp
+        <%= new Date() %>
 Lab 2 - Create a new file t1.jsp
                 <h1>In t1.jsp</h1>
                 <h1>
