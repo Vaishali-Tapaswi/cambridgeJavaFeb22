@@ -1,3 +1,16 @@
+Lab 3 - Table ->create table popcount (name varchar(20) primary key, count numeric)
+                insert into popcount values ('Hero1',0);
+                insert into popcount values ('Hero2',0);
+                insert into popcount values ('Hero3',0);
+                insert into popcount values ('Hero4',0);
+                
+                Create index.html to show 4 names as buttons
+                on click on that button, increase the count for that hero (where)
+                show heros and the count for each.
+   
+
+Lab2 - in myservlet, show index.html again
+
 Lab1 - Polling Assignment
     index.html 
             <form action="myservlet">
