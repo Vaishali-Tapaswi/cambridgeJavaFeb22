@@ -1,0 +1,12 @@
+Lab 1- Create new web project (demo4)
+    Create index.html
+      <form action="_____________">
+          Number : <input type="number" name="____________"/><br/>
+          <input type="submit" value="add"/>
+      </form>
+   Create Count Servlet ()
+          PrintWriter out  = response.getWriter();
+          int count = 0;
+          count+= Integer.parseInt(request.getParameter("nm"));
+          out.println("<h1>Current Count = " + count + "</h1>");
+   Run->
