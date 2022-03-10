@@ -1,12 +1,90 @@
-Lab 1- Create new web project (demo4)
-    Create index.html
-      <form action="_____________">
-          Number : <input type="number" name="____________"/><br/>
-          <input type="submit" value="add"/>
-      </form>
-   Create Count Servlet ()
-          PrintWriter out  = response.getWriter();
-          int count = 0;
-          count+= Integer.parseInt(request.getParameter("nm"));
-          out.println("<h1>Current Count = " + count + "</h1>");
-   Run->
+Lab1 - Polling Assignment
+    index.html 
+            <form action="myservlet">
+                <h1>In Russia, opinion polls are a political weapon</h1>
+                <input type="submit" name="op" value="Agree" />
+                <input type="submit" name="op" value="DisAgree"/>
+            </form>
+    Write MyServlet servlet
+      Modify @WebServlet to /myservlet
+      Modify doGet methdo to include 
+            PrintWriter out = response.getWriter();
+            String op = request.getParameter("op");
+            System.out.println("in doGet " + op);
+            PollDAO dao = new PollDAO();
+            dao.modify(op);
+            double agreepercent = dao.getAgreePercent();
+            out.println("<h1>Agree : "+ agreepercent +" %</h1>" );
+            out.println("<h1>Dis Agree : "+(100- agreepercent) +" %</h1>" );
+   Write class PollDAO
+          public class PollDAO {
+                public double getAgreePercent() {
+                    Connection con = null;
+                    Statement stmt = null;
+                    double percent = 0;
+                    try {
+                        Class.forName("org.hsqldb.jdbcDriver");
+                        con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/", "sa", "");
+                        stmt = con.createStatement();
+                        String sql = "select * from poll";
+                        ResultSet rs = stmt.executeQuery(sql);
+                        rs.next();
+                        int agree = rs.getInt(2);
+                        int disagree = rs.getInt(3);
+                        System.out.println("in getAgreePercent " + agree);
+                        int totalop = agree + disagree;
+                        percent = ((double) (100 * agree)) / totalop;
+                    } catch (Exception e) {
+                        System.out.println("Exception " + e);
+                    } finally {
+                        try {
+                            stmt.close();
+                            con.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    return percent;
+                }
+
+                public void modify(String op) {
+                    // jdbc code to change op
+                    System.out.println("Current op = " + op.toLowerCase());
+                    Connection con = null;
+                    Statement stmt = null;
+                    try {
+                        Class.forName("org.hsqldb.jdbcDriver");
+                        con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/", "sa", "");
+                        stmt = con.createStatement();
+                        String sql = "";
+                        // table has a single row
+                        if (op.equalsIgnoreCase("agree"))
+                            sql = "update poll set agree = agree+1";
+                        else
+                            sql = "update poll set disagree = disagree+1";
+                        stmt.execute(sql);
+                    } catch (Exception e) {
+                        System.out.println("Exception " + e);
+                    } finally {
+                        try {
+                            stmt.close();
+                            con.close();
+                        } catch (SQLException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+      Run => will give error, class not found
+      copy hsqldb.jar(c:\hsqldb\lib\hsqldb.jar) to lib folder of webapp\WEB-INF
+      Run => will give error, database connection
+      WindowsExplorer - hsqldb\bin\runServer
+      Run => will give error, table not found
+      WindowsExplorer - hsqldb\bin\runManager
+        create table poll (question varchar(100), agree numeric, disagree numeric);
+        insert into poll values ('In Russia, opinion polls are a political weapon',0,0)
+      Run -> percent shown
+      
+      
+      Run -> Observe database
