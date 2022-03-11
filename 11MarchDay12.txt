@@ -1,3 +1,21 @@
+XML
+  XML -> eXtensible Markup Language
+	Well-Formed XML File
+		1. All start tags must be closed
+		2. Case Sensitive
+		3. Nesting Tags
+		4. One-Only-One Root Tag
+		5. Attributes must be in quotes
+    
+    <?xml version="1.0" encoding="UTF-8"?>
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+    </note>
+
+-----------------------------
 CSS
   Lab1 - Internal CSS
           <!DOCTYPE html>
