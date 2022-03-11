@@ -1,3 +1,14 @@
+JSON - 
+	{
+	"note":
+		{
+			"from":"Neena",
+			"to":"Seema",
+			"message":"Information...."
+		}	
+	}
+	https://www.w3schools.com/js/js_json_xml.asp
+-----------------------------------
 XML
   XML -> eXtensible Markup Language
 	Well-Formed XML File
