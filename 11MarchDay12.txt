@@ -1,0 +1,46 @@
+CSS
+  Lab1 - Internal CSS
+          <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="ISO-8859-1">
+        <title>Insert title here</title>
+        <style type="text/css">
+        h1 {
+          color: blue;
+          text-align: center;
+        }
+        </style>
+        </head>
+        <body>
+          <h1>aaaaaaaaaaaa</h1>
+          <h1>aaaaaaa</h1>
+          <h2>sssssssss</h2>
+        </body>
+        </html>
+ Lab2 
+    simple.css
+          @charset "ISO-8859-1";
+          h1 {
+            color: blue;
+            text-align: center;
+          }
+          h2 {
+            color: red;
+            text-align: left;
+          }
+   Lab2.html
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="ISO-8859-1">
+        <title>Insert title here</title>
+
+        <link href="simple.css" rel="stylesheet" />
+        </head>
+        <body>
+          <h1>aaaaaaaaaaaa</h1>
+          <h1>aaaaaaa</h1>
+          <h2>sssssssss</h2>
+        </body>
+        </html>
