@@ -1,0 +1,22 @@
+Lab1 - index.html -> empno, ename, salary
+       create Emp.java -> private int empno, private String ename, private int salary + getter/setter + toString
+       servlet -> doGet
+                {
+                  Create emp object and fill the data from request.getParameter
+                }
+                --->show emp object in html
+Lab2 - Lab1.html
+            empno, ename, salary
+            servlet -> doGet
+                {
+                  insert this emp record in table
+                }
+                --->show emp object in html
+                
+ Lab3 -> Lab2.html -> submit button -> 
+          servlet
+            { get all the records from table (ResultSet)
+            show as table 
+            }
+ Monday - Test 
+---------------------------------------------
