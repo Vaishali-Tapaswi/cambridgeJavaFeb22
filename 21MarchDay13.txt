@@ -99,8 +99,6 @@ Lab1 - Struts + Maven (https://www.mkyong.com/struts/struts-hello-world-example/
           import org.apache.struts.action.ActionForward;
           import org.apache.struts.action.ActionMapping;
 
-          import com.mkyong.common.form.HelloWorldForm;
-
           public class HelloWorldAction extends Action{
 
             public ActionForward execute(ActionMapping mapping,ActionForm form,
