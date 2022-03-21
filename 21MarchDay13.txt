@@ -1,0 +1,135 @@
+Lab1 - Struts + Maven (https://www.mkyong.com/struts/struts-hello-world-example/)
+  Eclipse - > new Workspace -> Preferences -> Java , JRE
+  new Maven Project -> select -> create a simple project
+                      GroupId- Day1
+                      ArtifactId - Day1.demo1
+                      Packaging - war 
+         Modify pom.xml to include (after </packaging> and before <project>)
+          <dependencies>
+              <dependency>
+                <groupId>org.apache.struts</groupId>
+              <artifactId>struts-core</artifactId>
+                <version>1.3.10</version>
+              </dependency>
+
+              <dependency>
+                <groupId>org.apache.struts</groupId>
+              <artifactId>struts-taglib</artifactId>
+                <version>1.3.10</version>
+              </dependency>
+        </dependencies>
+        
+        Create web.xml
+          create a folder WEB-INF in src/main/webapp
+          create a file web.xml in WEB-INF
+              <?xml version="1.0" encoding="UTF-8"?>
+              <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+                <display-name>demo6</display-name>
+                <welcome-file-list>
+                  <welcome-file>index.html</welcome-file>
+                </welcome-file-list>
+                 <servlet>
+                  <servlet-name>action</servlet-name>
+                  <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+                  <init-param>
+                      <param-name>config</param-name>
+                      <param-value>/WEB-INF/struts-config.xml</param-value>
+                  </init-param>
+                  <load-on-startup>1</load-on-startup>
+                </servlet>
+
+                <servlet-mapping>
+                     <servlet-name>action</servlet-name>
+                     <url-pattern>*.do</url-pattern>
+                </servlet-mapping>
+
+              </web-app>
+              
+        Create struts-config.xml
+              <?xml version="1.0" encoding="UTF-8"?>
+              <!DOCTYPE struts-config PUBLIC 
+              "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+              "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+              <struts-config>
+
+                <form-beans>
+                   <form-bean name="helloWorldForm" 
+                  type="demo.HelloWorldForm"/>
+                </form-beans>
+
+                <action-mappings>
+                   <action path="/helloWorld"
+                  type="demo.HelloWorldAction"
+                  name="helloWorldForm">
+                  <forward name="success" path="/success.jsp"/>
+
+                   </action>
+                </action-mappings>
+             </struts-config>
+             
+             
+        Create demo.HelloWorldForm
+                package demo;
+
+                import org.apache.struts.action.ActionForm;
+
+                public class HelloWorldForm extends ActionForm{
+
+                  String message;
+
+                  public String getMessage() {
+                    return message;
+                  }
+
+                  public void setMessage(String message) {
+                    this.message = message;
+                  }
+
+                }
+                
+        Create demo.HelloWorldAction
+          package demo;
+
+          import javax.servlet.http.HttpServletRequest;
+          import javax.servlet.http.HttpServletResponse;
+
+          import org.apache.struts.action.Action;
+          import org.apache.struts.action.ActionForm;
+          import org.apache.struts.action.ActionForward;
+          import org.apache.struts.action.ActionMapping;
+
+          import com.mkyong.common.form.HelloWorldForm;
+
+          public class HelloWorldAction extends Action{
+
+            public ActionForward execute(ActionMapping mapping,ActionForm form,
+              HttpServletRequest request,HttpServletResponse response)
+                  throws Exception {
+
+              HelloWorldForm helloWorldForm = (HelloWorldForm) form;
+              helloWorldForm.setMessage("Hello World! Struts");
+
+              return mapping.findForward("success");
+            }
+          }
+
+      Create success.jsp in webapp
+             <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+                pageEncoding="ISO-8859-1"%>
+            <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta charset="ISO-8859-1">
+            <title>Insert title here</title>
+            </head>
+            <body>
+            <h1><bean:write name="helloWorldForm" property="message" />
+            </h1>
+            </body>
+            </html>
+     Eclipse -> Servers -> configure tomcat
+     RightClieck on project -> run on server 
+      http://localhost:8080/Day1.demo1/helloWorld.do
