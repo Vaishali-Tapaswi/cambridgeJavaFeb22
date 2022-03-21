@@ -1,3 +1,5 @@
+Lab 3 - https://www.youtube.com/watch?v=xxRmW8Jgt_s 
+        repeat the Lab1/Lab2 code again. ..
 Lab 2- create fail.jsp 
     Modify action code (HelloWorldAction) to 
         public ActionForward execute(ActionMapping mapping,ActionForm form,
