@@ -5,6 +5,16 @@ Lab1 - Struts + Maven (Accept input from User and process it)
                       GroupId- Day2
                       ArtifactId - Day2.demo2
                       Packaging - war 
+         create common.properties in resouces folder
+         #common module error message
+         error.common.name.required = Name is required.
+
+         #common module label message
+         label.common.name = UserNamefromPropertiesFile
+         label.common.button.submit = Submit
+         label.common.button.reset = Reset
+                      
+                      
          Modify pom.xml to include (after </packaging> and before <project>)
           <dependencies>
               <dependency>
