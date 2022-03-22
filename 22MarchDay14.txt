@@ -1,4 +1,5 @@
 Lab 2- new Project (Day2.demo2) for validations and input forms
+https://mkyong.com/struts/struts-validator-framework-example/
 Lab1 - Struts + Maven (Accept input from User and process it)
    Eclipse 
   new Maven Project -> select -> create a simple project
