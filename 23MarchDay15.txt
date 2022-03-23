@@ -6,3 +6,4 @@ Lab1 - download Struts-Classdemos.zip file
               Connection -> start the detabase baser
               Table not found-> create table
           
+                  create table emp (empno numeric(3) primary key, ename varchar(20), salary numeric(7))
