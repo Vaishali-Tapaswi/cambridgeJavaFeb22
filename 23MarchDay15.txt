@@ -1,0 +1,8 @@
+Lab1 - download Struts-Classdemos.zip file
+      extract it on c:\..
+      copy Day3.demo1 folder in current eclipse workspace
+      File -> import -> maven project -> select Day3.demo1 -> import
+      Run => Watch different errors 
+              Connection -> start the detabase baser
+              Table not found-> create table
+          
